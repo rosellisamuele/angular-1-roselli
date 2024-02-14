@@ -10,4 +10,19 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'prog-1-roselli';
+  numClick = 0;
+  buttonDisabled : boolean = false;
+
+  clickButton = () => {
+    this.numClick++;
+  }
+
+  resetButton = () => {
+    this.numClick = 0;
+  }
+
+  disableBtn = () => {
+    this.buttonDisabled = true;
+    
+  }
 }
