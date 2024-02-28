@@ -1,8 +1,23 @@
 
 <router-outlet />
 
-<h1>{{title}}</h1>
+<h1>Hello, {{title}}</h1>
 <p>numero click = {{numClick}}</p>
 <button (click)="clickButton()">Test button</button>
 <button (click)="resetButton()">Annulla</button>
 <button (click)="disableBtn()" [disabled]="buttonDisabled">Disabilita</button>
+
+<br>
+<input type="text" [(ngModel)]="title">
+
+<hr>
+
+<input type="text" [(ngModel)]="person.name" placeholder="Mario"><br>
+<input type="text" [(ngModel)]="person.surname" placeholder="Rossi"><br>
+<input type="number" [(ngModel)]="person.age"><br>
+
+<button (click)="addPerson()">Add Person</button>
+<ul>
+    <li *ngFor="let person of personArray; index as i">{{person.name}} {{person.surname}}, {{person.age}}<br>
+    <button (click) = "rmvPerson(i)">Elimina</button><button (click) = "modPerson(i)">Modifica</button></li>
+</ul>
